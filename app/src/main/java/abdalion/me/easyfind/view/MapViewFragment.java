@@ -1,21 +1,34 @@
 package abdalion.me.easyfind.view;
 
+import android.graphics.Point;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.SystemClock;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Interpolator;
+import android.view.animation.LinearInterpolator;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.MapsInitializer;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.Projection;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import java.util.List;
+
+import abdalion.me.easyfind.Listener;
 import abdalion.me.easyfind.R;
+import abdalion.me.easyfind.model.User;
 
 /**
  * Created by Egon on 27/4/2017.
@@ -24,7 +37,10 @@ import abdalion.me.easyfind.R;
 public class MapViewFragment extends Fragment {
 
     MapView mMapView;
-    private GoogleMap googleMap;
+    private GoogleMap googleMap ;
+    private User mObservedUser;
+    private Marker mUserMarker ;
+    private Listener<Boolean> mapFinishedListener;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -49,17 +65,86 @@ public class MapViewFragment extends Fragment {
                 // For showing a move to my location button
                 googleMap.setMyLocationEnabled(true);
 
-                // For dropping a marker at a point on the Map
-                LatLng sydney = new LatLng(-34, 151);
-                googleMap.addMarker(new MarkerOptions().position(sydney).title("Marker Title").snippet("Marker Description"));
+                updateMarker();
 
-                // For zooming automatically to the location of the marker
-                CameraPosition cameraPosition = new CameraPosition.Builder().target(sydney).zoom(12).build();
-                googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+                // For dropping a marker at a point on the Map
+//                LatLng sydney = new LatLng(-34, 151);
+//                googleMap.addMarker(new MarkerOptions().position(sydney).title("Marker Title").snippet("Marker Description"));
+//
+//                // For zooming automatically to the location of the marker
+//                CameraPosition cameraPosition = new CameraPosition.Builder().target(sydney).zoom(12).build();
+//                googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+
+
+
             }
         });
 
         return rootView;
+    }
+
+    public void setMapFinishedListener(Listener<Boolean> mapListener) {
+        mapFinishedListener = mapListener;
+    }
+
+    public void updateObservedUser(User user) {
+        mObservedUser = user;
+        updateMarker();
+    }
+
+    private void updateMarker() {
+        if(mObservedUser != null) {
+            String userLocation = mObservedUser.getLocation();
+            String[] latlng = userLocation.split(", ");
+            LatLng userLatLng = new LatLng(Double.parseDouble(latlng[0]), Double.parseDouble(latlng[1]));
+
+            if(mUserMarker != null) {
+                animateMarker(mUserMarker, userLatLng, false);
+            }
+            else {
+                mUserMarker = googleMap.addMarker(new MarkerOptions().position(userLatLng).title(mObservedUser.getMail()));
+            }
+
+            CameraPosition cameraPosition = new CameraPosition.Builder().target(userLatLng).zoom(12).build();
+            googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+        }
+    }
+
+    private void animateMarker(final Marker marker, final LatLng toPosition,
+                              final boolean hideMarker) {
+        final Handler handler = new Handler();
+        final long start = SystemClock.uptimeMillis();
+        Projection proj = googleMap.getProjection();
+        Point startPoint = proj.toScreenLocation(marker.getPosition());
+        final LatLng startLatLng = proj.fromScreenLocation(startPoint);
+        final long duration = 500;
+
+        final Interpolator interpolator = new LinearInterpolator();
+
+        handler.post(new Runnable() {
+            @Override
+            public void run() {
+                long elapsed = SystemClock.uptimeMillis() - start;
+                float t = interpolator.getInterpolation((float) elapsed
+                        / duration);
+                double lng = t * toPosition.longitude + (1 - t)
+                        * startLatLng.longitude;
+                double lat = t * toPosition.latitude + (1 - t)
+                        * startLatLng.latitude;
+                marker.setPosition(new LatLng(lat, lng));
+
+                if (t < 1.0) {
+                    // Post again 16ms later.
+                    handler.postDelayed(this, 16);
+                } else {
+                    if (hideMarker) {
+                        marker.setVisible(false);
+                    } else {
+                        marker.setVisible(true);
+                    }
+                }
+            }
+        });
     }
 
     @Override
@@ -85,4 +170,5 @@ public class MapViewFragment extends Fragment {
         super.onLowMemory();
         mMapView.onLowMemory();
     }
+
 }

@@ -1,6 +1,7 @@
 package abdalion.me.easyfind.controller;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import abdalion.me.easyfind.Listener;
 import abdalion.me.easyfind.data.UserDAO;
@@ -12,12 +13,21 @@ import abdalion.me.easyfind.model.User;
 
 public class UserController {
 
-    public void getObservedUsersID(final Listener<ArrayList<String>> followedUsersID) {
+    public void getObservedUsersMail(final Listener<ArrayList<String>> followedUsersMail) {
         UserDAO userDAO = new UserDAO();
-        userDAO.getObservedUsersID(new Listener<ArrayList<String>>() {
+        userDAO.getObservedUsersMail(new Listener<ArrayList<String>>() {
             @Override
-            public void update(ArrayList<String> followedUsersIDList) {
-                followedUsersID.update(followedUsersIDList);
+            public void update(ArrayList<String> followedUsersMailList) {
+                followedUsersMail.update(followedUsersMailList);
+            }
+        });
+    }
+
+    private void getMyObservedUsers(Listener<List<User>> done) {
+        getObservedUsersMail(new Listener<ArrayList<String>>() {
+            @Override
+            public void update(ArrayList<String> obj) {
+
             }
         });
     }

@@ -1,7 +1,5 @@
 package abdalion.me.easyfind.model;
 
-import android.graphics.Bitmap;
-
 import com.google.android.gms.maps.model.LatLng;
 
 /**
@@ -10,44 +8,35 @@ import com.google.android.gms.maps.model.LatLng;
 
 public class User {
 
-    private String userID;
-    private String name;
-    private LatLng location;
-    private Bitmap image;
+    private String mail;
+    private String location;
+    private String imageUrl;
 
-    public String getName() {
-        return name;
+    public User(String mail) {
+        this.mail = mail;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getMail() {
+        return mail;
     }
 
-    public void setUserID(String userID) {
-        this.userID = userID;
+    public void setMail(String mail) {
+        this.mail = mail;
     }
 
-    public User(String userID) {
-        this.userID = userID;
-    }
-
-    public String getUserID() {
-        return userID;
-    }
-
-    public LatLng getLocation() {
+    public String getLocation() {
         return location;
     }
 
-    public LatLng setLocation(LatLng location) {
-        return this.location = location;
+    public void setLocation(String location) {
+        this.location = location;
     }
 
-    public Bitmap getImage() {
-        return image;
+    public String getImageUrl() {
+        return this.imageUrl;
     }
 
-    public void setImage(Bitmap image) {
-        this.image = image;
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 }
