@@ -57,31 +57,33 @@ public class MainActivity extends AppCompatActivity {
                 mUserRecyclerAdapter.setClickListener(new UsersListener());
                 mDrawerRecycler.setAdapter(mUserRecyclerAdapter);
 
-            }
-        });
-
-            loadUser(new Listener<User>() {
-                @Override
-                public void update(final User user) {
-                    if(mMailList == null) {
-                        Toast.makeText(MainActivity.this, "Maillist is null", Toast.LENGTH_SHORT).show();
-                    }
-
-                    mMapViewFragment = new MapViewFragment();
-                    getSupportFragmentManager()
-                            .beginTransaction()
-                            .replace(R.id.content_frame, mMapViewFragment)
-                            .commit();
-
-                    mMapViewFragment.setMapFinishedListener(new Listener<Boolean>() {
+                if(mailList.get(0) != null) {
+                    loadUser(new Listener<User>() {
                         @Override
-                        public void update(Boolean obj) {
-                            mMapViewFragment.updateObservedUser(user);
+                        public void update(final User user) {
+                            if(mMailList == null) {
+                                Toast.makeText(MainActivity.this, "Maillist is null", Toast.LENGTH_SHORT).show();
+                            }
+
+                            mMapViewFragment = new MapViewFragment();
+                            getSupportFragmentManager()
+                                    .beginTransaction()
+                                    .replace(R.id.content_frame, mMapViewFragment)
+                                    .commit();
+
+                            mMapViewFragment.setMapFinishedListener(new Listener<Boolean>() {
+                                @Override
+                                public void update(Boolean obj) {
+                                    mMapViewFragment.updateObservedUser(user);
+                                }
+                            });
+
                         }
-                    });
+                    }, mMailList.get(0));
 
                 }
-            }, mMailList.get(0));
+            }
+        });
 
 
 
@@ -104,13 +106,15 @@ public class MainActivity extends AppCompatActivity {
 
     private void loadUser(final Listener<User> userListener, String mail) {
         final UserController userController = new UserController();
-        userController.observeUser(new Listener<User>() {
-            @Override
-            public void update(User obj) {
-                userListener.update(obj);
-                Toast.makeText(MainActivity.this, "Loaded user" + obj.getMail(), Toast.LENGTH_SHORT).show();
-            }
-        }, mail);
+        if(mail != null) {
+            userController.observeUser(new Listener<User>() {
+                @Override
+                public void update(User obj) {
+                    userListener.update(obj);
+                    Toast.makeText(MainActivity.this, "Loaded user" + obj.getMail(), Toast.LENGTH_SHORT).show();
+                }
+            }, mail);
+        }
     }
 
 

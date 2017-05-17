@@ -44,25 +44,24 @@ public class UserDAO {
 
         final ArrayList<String> observedUsersMail = new ArrayList<>();
 
-//        sUserService.getUsers().enqueue(new Callback<ArrayList<User>>() {
-//            @Override
-//            public void onResponse(Call<ArrayList<User>> call, Response<ArrayList<User>> response) {
-//                for(User user: response.body()) {
-//                    observedUsersMail.add(user.getMail());
-//                }
-//                listener.update(observedUsersMail);
-//            }
-//
-//            @Override
-//            public void onFailure(Call<ArrayList<User>> call, Throwable t) {
-//                t.printStackTrace();
-//            }
-//        });
+        sUserService.getUsers().enqueue(new Callback<List<User>>() {
+            @Override
+            public void onResponse(Call<List<User>> call, Response<List<User>> response) {
+                for(User user: response.body()) {
+                    observedUsersMail.add(user.getMail());
+                }
+                listener.update(observedUsersMail);
+            }
 
-        observedUsersMail.add("egonbush@hotmail.com");
-        observedUsersMail.add("testmail@hotmail.com");
-        observedUsersMail.add("asddds");
-        listener.update(observedUsersMail);
+            @Override
+            public void onFailure(Call<List<User>> call, Throwable t) {
+
+            }
+        });
+
+//        observedUsersMail.add("egonbush@hotmail.com");
+//        observedUsersMail.add("testmail@hotmail.com");
+//        observedUsersMail.add("asddds");
     }
 
     public void observeUser(final Listener<User> userListener, String userMail) {

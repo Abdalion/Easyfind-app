@@ -31,11 +31,11 @@ public interface UsersService {
     Call<ResponseBody> getUser(@Query("mail") String mail);
 
     @Headers("Content-Type: application/json")
-    @POST("users/")
+    @POST("users")
     Call<User> createUser(@Body User user);
 
-    @PUT("users/{id}")
-    Call<String> updateLocation(@Body String location);
+    @PUT("users")
+    Call<String> updateLocation(@Query("mail") String mail);
 
 
 }
