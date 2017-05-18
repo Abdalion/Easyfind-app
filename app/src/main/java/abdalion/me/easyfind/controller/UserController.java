@@ -7,13 +7,15 @@ import abdalion.me.easyfind.Listener;
 import abdalion.me.easyfind.data.UserDAO;
 import abdalion.me.easyfind.model.User;
 
+import static abdalion.me.easyfind.utils.Utils.isNull;
+
 /**
  * Created by Egon on 30/4/2017.
  */
 
 public class UserController {
 
-    public void getObservedUsersMail(final Listener<ArrayList<String>> followedUsersMail) {
+    public void getObservedUsersMail(final Listener<List<String>> followedUsersMail) {
         UserDAO userDAO = new UserDAO();
         userDAO.getObservedUsersMail(new Listener<ArrayList<String>>() {
             @Override
@@ -23,23 +25,18 @@ public class UserController {
         });
     }
 
-    private void getMyObservedUsers(Listener<List<User>> done) {
-        getObservedUsersMail(new Listener<ArrayList<String>>() {
-            @Override
-            public void update(ArrayList<String> obj) {
+    public void loadUser(String mail, final Listener<User> userListener) {
+        //Runnable cada 3 sec
 
-            }
-        });
-    }
-
-    public void observeUser(final Listener<User> userListener, String userID) {
         final UserDAO userDAO = new UserDAO();
-        userDAO.observeUser(new Listener<User>() {
-            @Override
-            public void update(User user) {
-                userListener.update(user);
-            }
-        }, userID);
+        if(!isNull(mail)) {
+            userDAO.observeUser(new Listener<User>() {
+                @Override
+                public void update(User obj) {
+                    userListener.update(obj);
+                }
+            }, mail);
+        }
     }
 
     public void updateMyPosition() {

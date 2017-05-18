@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 import abdalion.me.easyfind.R;
+import abdalion.me.easyfind.view.main.MainActivity;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 

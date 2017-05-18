@@ -66,7 +66,6 @@ public class UserDAO {
 
     public void observeUser(final Listener<User> userListener, String userMail) {
 
-        //Runnable cada 3 segundos.
 
         sUserService.getUser(userMail).enqueue(new Callback<ResponseBody>() {
             @Override
@@ -91,28 +90,9 @@ public class UserDAO {
 
             @Override
             public void onFailure(Call<ResponseBody> call, Throwable t) {
-
+                t.printStackTrace();
             }
         });
-
-
-
-
-//        User user = new User(userMail);
-//        if(userMail.equals("asdasd")) {
-//            user.setLocation("-34.638068, -58.491400");
-//            user.setMail("TestUser1");
-//        }
-//        else if(userMail.equals("5a00")) {
-//            user.setLocation("-34.633294, -58.494746");
-//            user.setMail("TestUser2");
-//        }
-//        else if(userMail.equals("asddds")) {
-//            user.setLocation("-34.634068, -58.499400");
-//            user.setMail("TestUser3");
-//        }
-//
-//        userListener.update(user);
     }
 
     public void updateMyPosition() {
