@@ -15,6 +15,10 @@ import static abdalion.me.easyfind.utils.Utils.isNull;
 
 public class UserController {
 
+    //Buscar en archivo local los mails
+    //get todos los usuarios de Api/User -- Done
+    //New Arraylist de los mails que estan en local y api
+
     public void getObservedUsersMail(final Listener<List<String>> followedUsersMail) {
         UserDAO userDAO = new UserDAO();
         userDAO.getObservedUsersMail(new Listener<ArrayList<String>>() {
@@ -30,12 +34,12 @@ public class UserController {
 
         final UserDAO userDAO = new UserDAO();
         if(!isNull(mail)) {
-            userDAO.observeUser(new Listener<User>() {
+            userDAO.observeUser(mail, new Listener<User>() {
                 @Override
                 public void update(User obj) {
                     userListener.update(obj);
                 }
-            }, mail);
+            });
         }
     }
 

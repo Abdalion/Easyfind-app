@@ -37,11 +37,6 @@ public class UserDAO {
     }
 
     public void getObservedUsersMail(final Listener<ArrayList<String>> listener) {
-
-        //Buscar en archivo local los mails
-        //get todos los usuarios de Api/User -- Done
-        //New Arraylist de los mails que estan en local y api
-
         final ArrayList<String> observedUsersMail = new ArrayList<>();
 
         sUserService.getUsers().enqueue(new Callback<List<User>>() {
@@ -55,17 +50,12 @@ public class UserDAO {
 
             @Override
             public void onFailure(Call<List<User>> call, Throwable t) {
-
+                t.printStackTrace();
             }
         });
-
-//        observedUsersMail.add("egonbush@hotmail.com");
-//        observedUsersMail.add("testmail@hotmail.com");
-//        observedUsersMail.add("asddds");
     }
 
-    public void observeUser(final Listener<User> userListener, String userMail) {
-
+    public void observeUser(String userMail, final Listener<User> userListener) {
 
         sUserService.getUser(userMail).enqueue(new Callback<ResponseBody>() {
             @Override
