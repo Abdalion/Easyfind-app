@@ -5,13 +5,11 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.SystemClock;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Interpolator;
 import android.view.animation.LinearInterpolator;
-import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -24,11 +22,11 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-import java.util.List;
-
 import abdalion.me.easyfind.Listener;
 import abdalion.me.easyfind.R;
 import abdalion.me.easyfind.model.User;
+
+import static abdalion.me.easyfind.utils.Utils.isNull;
 
 /**
  * Created by Egon on 27/4/2017.
@@ -60,17 +58,8 @@ public class MapViewFragment extends Fragment {
             @Override
             public void onMapReady(GoogleMap mMap) {
                 googleMap = mMap;
-
-                // For showing a move to my location button
                 googleMap.setMyLocationEnabled(true);
-
-                // For dropping a marker at a point on the Map
-//                LatLng sydney = new LatLng(-34, 151);
-//                googleMap.addMarker(new MarkerOptions().position(sydney).title("Marker Title").snippet("Marker Description"));
-//
-//                // For zooming automatically to the location of the marker
-//                CameraPosition cameraPosition = new CameraPosition.Builder().target(sydney).zoom(12).build();
-//                googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+                mapFinishedListener.update(true);
 
             }
         });
@@ -82,25 +71,44 @@ public class MapViewFragment extends Fragment {
         mapFinishedListener = mapListener;
     }
 
-    public void updateObservedUser(User user) {
-        updateMarker(user);
+    public void setUserMarker(User user) {
+        if(isNull(mUserMarker)) {
+            createMarker(user);
+        }
+        else {
+            if (mUserMarker.getTitle().equals(user.getMail())) {
+                relocateMarker(user, false);
+            }
+            else {
+                googleMap.clear();
+                createMarker(user);
+            }
+        }
     }
 
-    private void updateMarker(User user) {
+    private void createMarker(User user) {
+        String userLocation = user.getLocation();
+        String[] latlng = userLocation.split(", ");
+        LatLng userLatLng = new LatLng(Double.parseDouble(latlng[0]), Double.parseDouble(latlng[1]));
+        mUserMarker = googleMap.addMarker(new MarkerOptions().position(userLatLng).title(user.getMail()));
+        CameraPosition cameraPosition = new CameraPosition.Builder().target(userLatLng).zoom(12).build();
+        googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+
+    }
+
+    private void relocateMarker(User user, boolean autoZoom) {
         if(user != null) {
             String userLocation = user.getLocation();
             String[] latlng = userLocation.split(", ");
             LatLng userLatLng = new LatLng(Double.parseDouble(latlng[0]), Double.parseDouble(latlng[1]));
 
-            if(mUserMarker != null) {
-                animateMarker(mUserMarker, userLatLng, false);
-            }
-            else {
-                mUserMarker = googleMap.addMarker(new MarkerOptions().position(userLatLng).title(user.getMail()));
+            animateMarker(mUserMarker, userLatLng, false);
+
+            if(autoZoom) {
+                CameraPosition cameraPosition = new CameraPosition.Builder().target(userLatLng).zoom(12).build();
+                googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
             }
 
-            CameraPosition cameraPosition = new CameraPosition.Builder().target(userLatLng).zoom(12).build();
-            googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
         }
     }
 

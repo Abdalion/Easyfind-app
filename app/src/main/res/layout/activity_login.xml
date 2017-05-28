@@ -21,13 +21,31 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="20dp"
-            android:background="#dc4e41"
-            android:text="Sign in with google +"
+            android:background="@color/colorAccent"
+            android:text="Sign in"
+            android:textSize="20dp"
             android:textAllCaps="false"
             android:textColor="#fff"
             android:layout_centerInParent="true"
-            android:id="@+id/login_button_google"
-            android:visibility="gone"/>
+            android:id="@+id/login_btn"
+
+            android:visibility="visible"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:background="@color/colorPrimaryDark"
+            android:text="Register"
+            android:textSize="20dp"
+            android:textAllCaps="false"
+            android:textColor="#fff"
+            android:layout_below="@id/login_btn"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:id="@+id/register_btn"
+            android:visibility="visible"/>
+
 
         <ProgressBar
             android:layout_width="50dp"

@@ -3,33 +3,6 @@
 
     <item
         is-multidex="true"
-        jar="C:\Users\Egon\.gradle\caches\modules-2\files-2.1\com.github.bumptech.glide\glide\3.7.0\9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4\glide-3.7.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4">
-        <dex dex="C:\Users\Egon\Desktop\easyfind-app\app\build\intermediates\transforms\dex\debug\folders\1000\10\glide-3.7.0_183570efe640bc53453cfcc20a03bcfe5537e22e\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Egon\Desktop\easyfind-app\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.1.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="e2719c102dca3a7a5b02ce07f769362da6ddb4ab">
-        <dex dex="C:\Users\Egon\Desktop\easyfind-app\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-25.1.1_81178bb54df5641d782a2d1508cfa2ecd25f7161\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Egon\Desktop\easyfind-app\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\7.3.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="fe3e0c6de7cceed888b277487238b6af9a1cc299">
-        <dex dex="C:\Users\Egon\Desktop\easyfind-app\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-maps-7.3.0_c94b800bf6046ed75708a50c264f894102f18f33\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="C:\Users\Egon\Desktop\easyfind-app\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.1.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
@@ -39,30 +12,12 @@
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Egon\.gradle\caches\modules-2\files-2.1\com.jakewharton\butterknife-annotations\8.5.1\bb67dad90bab7cd77a8f7f1b8442b47e3a2326bc\butterknife-annotations-8.5.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="bb67dad90bab7cd77a8f7f1b8442b47e3a2326bc">
-        <dex dex="C:\Users\Egon\Desktop\easyfind-app\app\build\intermediates\transforms\dex\debug\folders\1000\10\butterknife-annotations-8.5.1_bae1f8b6049b8c3294ea22ea5a9be9b5b11ea20a\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="C:\Users\Egon\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.7\751f548c85fa49f330cecbb1875893f971b33c4e\gson-2.7.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="751f548c85fa49f330cecbb1875893f971b33c4e">
         <dex dex="C:\Users\Egon\Desktop\easyfind-app\app\build\intermediates\transforms\dex\debug\folders\1000\10\gson-2.7_2f89bc55b7d79fe6c1dd2f6aa854257a2e6598d3\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Egon\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.8.0\5ea7af56cc7c567ed9856d99efb30740e9b17ff\okio-1.8.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="05ea7af56cc7c567ed9856d99efb30740e9b17ff">
-        <dex dex="C:\Users\Egon\Desktop\easyfind-app\app\build\intermediates\transforms\dex\debug\folders\1000\10\okio-1.8.0_4a76da753b07bd35e5866bd93e88cf97172120c7\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -81,15 +36,6 @@
         revision="25.0.2"
         sha1="f2f7ec211ce4d244ee97a57523eeb4526dc3cf8a">
         <dex dex="C:\Users\Egon\Desktop\easyfind-app\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-base-7.3.0_6c7dc161d83e6a2f5467171ffcb32e82f692365b\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Egon\Desktop\easyfind-app\app\build\intermediates\exploded-aar\com.jakewharton\butterknife\8.5.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="19f281a785ca0eb5f6799fc7bf7ca199a9ca1e8b">
-        <dex dex="C:\Users\Egon\Desktop\easyfind-app\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.jakewharton-butterknife-8.5.1_ceb5355526e771fa016463b3242a14e5650ef044\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -115,7 +61,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="d2b3b881db63b54cceea05eb6c8c1e6b04680b91">
+        sha1="a83000a08f043caf287f17a85156c117dd107d8e">
         <dex dex="C:\Users\Egon\Desktop\easyfind-app\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_b5b291150af1be805c749116bfc11224211118d6\classes.dex" />
     </item>
     <item
@@ -156,30 +102,12 @@
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Egon\Desktop\easyfind-app\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.1.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="0fb891e8f0cfba0513043a7bb357513d229ca2cd">
-        <dex dex="C:\Users\Egon\Desktop\easyfind-app\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-25.1.1_5559f5ed7d01a741b49891542684682c3caf1496\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="C:\Users\Egon\Desktop\easyfind-app\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-location\7.3.0\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="b2c07cdb814fe988ad05f7b4d767a841514a5991">
         <dex dex="C:\Users\Egon\Desktop\easyfind-app\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-location-7.3.0_890a01fc1a5405f34ed37336151faa30b1ec1072\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Egon\Desktop\easyfind-app\app\build\intermediates\exploded-aar\com.android.support\transition\25.1.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="15b049fedbd8e3926bf99d9e45dfc9b2a1043bb9">
-        <dex dex="C:\Users\Egon\Desktop\easyfind-app\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-transition-25.1.1_cd8c9cd98e03c12e3e08f72f8babc38ad278c79a\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -192,15 +120,6 @@
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Egon\Desktop\easyfind-app\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="787a49e015b56d5d19a8d3d0b1ebc904f7a5bd1f">
-        <dex dex="C:\Users\Egon\Desktop\easyfind-app\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_2c775d09f835e3e7bfd44fc4a9eb9e7f8d7a8ff4\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="C:\Users\Egon\Desktop\easyfind-app\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.1.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
@@ -210,21 +129,102 @@
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Egon\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\retrofit\2.1.0\2de7cd8b95b7021b1d597f049bcb422055119f2c\retrofit-2.1.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="2de7cd8b95b7021b1d597f049bcb422055119f2c">
-        <dex dex="C:\Users\Egon\Desktop\easyfind-app\app\build\intermediates\transforms\dex\debug\folders\1000\10\retrofit-2.1.0_1386f48dfa93d6911c76e705e20715fcc93c35b2\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="C:\Users\Egon\Desktop\easyfind-app\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.1.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="3e04ac8ca644ea7baddf6fdcf72e15c79e9df94a">
         <dex dex="C:\Users\Egon\Desktop\easyfind-app\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-ui-25.1.1_d66135199e5d53e6a59be4e85e58d69ec02bdc9f\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Egon\.gradle\caches\modules-2\files-2.1\com.github.bumptech.glide\glide\3.7.0\9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4\glide-3.7.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4">
+        <dex dex="C:\Users\Egon\Desktop\easyfind-app\app\build\intermediates\transforms\dex\debug\folders\1000\10\glide-3.7.0_183570efe640bc53453cfcc20a03bcfe5537e22e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Egon\Desktop\easyfind-app\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e2719c102dca3a7a5b02ce07f769362da6ddb4ab">
+        <dex dex="C:\Users\Egon\Desktop\easyfind-app\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-25.1.1_81178bb54df5641d782a2d1508cfa2ecd25f7161\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Egon\Desktop\easyfind-app\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\7.3.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="fe3e0c6de7cceed888b277487238b6af9a1cc299">
+        <dex dex="C:\Users\Egon\Desktop\easyfind-app\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-maps-7.3.0_c94b800bf6046ed75708a50c264f894102f18f33\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Egon\.gradle\caches\modules-2\files-2.1\com.jakewharton\butterknife-annotations\8.5.1\bb67dad90bab7cd77a8f7f1b8442b47e3a2326bc\butterknife-annotations-8.5.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="bb67dad90bab7cd77a8f7f1b8442b47e3a2326bc">
+        <dex dex="C:\Users\Egon\Desktop\easyfind-app\app\build\intermediates\transforms\dex\debug\folders\1000\10\butterknife-annotations-8.5.1_bae1f8b6049b8c3294ea22ea5a9be9b5b11ea20a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Egon\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.8.0\5ea7af56cc7c567ed9856d99efb30740e9b17ff\okio-1.8.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="05ea7af56cc7c567ed9856d99efb30740e9b17ff">
+        <dex dex="C:\Users\Egon\Desktop\easyfind-app\app\build\intermediates\transforms\dex\debug\folders\1000\10\okio-1.8.0_4a76da753b07bd35e5866bd93e88cf97172120c7\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Egon\Desktop\easyfind-app\app\build\intermediates\exploded-aar\com.jakewharton\butterknife\8.5.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="19f281a785ca0eb5f6799fc7bf7ca199a9ca1e8b">
+        <dex dex="C:\Users\Egon\Desktop\easyfind-app\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.jakewharton-butterknife-8.5.1_ceb5355526e771fa016463b3242a14e5650ef044\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Egon\Desktop\easyfind-app\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="0fb891e8f0cfba0513043a7bb357513d229ca2cd">
+        <dex dex="C:\Users\Egon\Desktop\easyfind-app\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-25.1.1_5559f5ed7d01a741b49891542684682c3caf1496\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Egon\Desktop\easyfind-app\app\build\intermediates\exploded-aar\com.android.support\transition\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="15b049fedbd8e3926bf99d9e45dfc9b2a1043bb9">
+        <dex dex="C:\Users\Egon\Desktop\easyfind-app\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-transition-25.1.1_cd8c9cd98e03c12e3e08f72f8babc38ad278c79a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Egon\Desktop\easyfind-app\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e8bd74819c1a84488b02fdd43b5fc31391bfdb14">
+        <dex dex="C:\Users\Egon\Desktop\easyfind-app\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_2c775d09f835e3e7bfd44fc4a9eb9e7f8d7a8ff4\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Egon\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\retrofit\2.1.0\2de7cd8b95b7021b1d597f049bcb422055119f2c\retrofit-2.1.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="2de7cd8b95b7021b1d597f049bcb422055119f2c">
+        <dex dex="C:\Users\Egon\Desktop\easyfind-app\app\build\intermediates\transforms\dex\debug\folders\1000\10\retrofit-2.1.0_1386f48dfa93d6911c76e705e20715fcc93c35b2\classes.dex" />
     </item>
     <item
         is-multidex="true"

@@ -35,10 +35,10 @@ public class ItemClickListener implements View.OnClickListener{
             List<String> usersList = mUserRecyclerAdapter.getUserList();
             final String mailClickeado = usersList.get(posicion);
 
-            new UserController().loadUser(mailClickeado, new Listener<User>() {
+            new UserController().listenUser(mailClickeado, new Listener<User>() {
                 @Override
                 public void update(User obj) {
-                    mMapViewFragment.updateObservedUser(obj);
+                    mMapViewFragment.setUserMarker(obj);
                     mDrawerLayout.closeDrawer(Gravity.LEFT);
                 }
             });

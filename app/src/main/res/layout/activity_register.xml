@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_register"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context="abdalion.me.easyfind.view.RegisterActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:textSize="50dp"
+        android:textStyle="bold"
+        android:text="Register"
+        android:textColor="#ffff"/>
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="250dp"
+        android:gravity="center"
+        android:textColorHint="#ffffff"
+        android:textColor="#ffffff"
+        android:textSize="25dp"
+        android:hint="Mail"
+        android:background="#b3b2b2"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/register_mail_et"
+        />
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:textColorHint="#ffffff"
+        android:textColor="#ffffff"
+        android:textSize="25dp"
+        android:hint="Password"
+        android:layout_below="@id/register_mail_et"
+        android:background="#b3b2b2"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/register_password_et"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="Register"
+        android:textSize="20dp"
+        android:textAllCaps="false"
+        android:textColor="#fff"
+        android:layout_below="@id/register_password_et"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:id="@+id/register_btn"
+        android:visibility="visible"/>
+
+</RelativeLayout>

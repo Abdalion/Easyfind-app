@@ -60,22 +60,15 @@ public class UserDAO {
         sUserService.getUser(userMail).enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                String result = null;
+                String result;
                 try {
                     result = response.body().string();
                 } catch (IOException e) {
+                    result = null;
                     e.printStackTrace();
                 }
-                Gson gson = new Gson();
-                JsonReader reader = new JsonReader(new StringReader(result));
-                reader.setLenient(true);
-                List<LinkedTreeMap> users = gson.fromJson(reader, ArrayList.class);
-                ArrayList<User> usersList = new ArrayList();
-                JsonObject jsonObject = gson.toJsonTree(users.get(0)).getAsJsonObject();
-                User myUser = gson.fromJson(jsonObject, User.class);
-                Log.d("USERS", result);
-                Log.d("USERS", usersList.toString());
-                userListener.update(myUser);
+
+                userListener.update(parseUser(result));
             }
 
             @Override
@@ -85,9 +78,12 @@ public class UserDAO {
         });
     }
 
-    public void updateMyPosition() {
+    public void updateMyPosition(User user) throws IOException {
 
         //PUT location
+        sUserService.updateLocation(user.get_id(), user).execute().body();
+
+        Log.d("REACHED", user.get_id() + user.getLocation());
 
         //todo: call server
     }
@@ -98,5 +94,15 @@ public class UserDAO {
 
     public void getClientImage() {
         //todo: call server
+    }
+
+    private User parseUser(String json) {
+        Gson gson = new Gson();
+        JsonReader reader = new JsonReader(new StringReader(json));
+        reader.setLenient(true);
+        List<LinkedTreeMap> users = gson.fromJson(reader, ArrayList.class);
+        JsonObject jsonObject = gson.toJsonTree(users.get(0)).getAsJsonObject();
+        User myUser = gson.fromJson(jsonObject, User.class);
+        return myUser;
     }
 }

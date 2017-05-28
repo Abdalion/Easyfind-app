@@ -13,7 +13,7 @@ import butterknife.ButterKnife;
 
 public class LoginActivity extends AppCompatActivity {
 
-    @BindView(R.id.login_button_google) Button googleButton;
+    @BindView(R.id.login_btn) Button googleButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
